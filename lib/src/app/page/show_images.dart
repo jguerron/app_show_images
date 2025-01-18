@@ -16,7 +16,7 @@ class ShowImagesPage extends StatelessWidget {
       body: BlocBuilder<ImagesCubit, ImagesState>(
         builder: (context, state) {
           if (state is ImagesInitial) {
-            imagesCubit.fetchImages();
+            imagesCubit.fetchImages('priime');
             return const Center(child: CircularProgressIndicator());
           } else if (state is ImagesLoading) {
             return const Center(child: CircularProgressIndicator());
@@ -28,9 +28,9 @@ class ShowImagesPage extends StatelessWidget {
                 return Card(
                   margin: const EdgeInsets.all(10),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image.network(item.media?.m ?? ''),
+                      Image.network(item.media.m),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(

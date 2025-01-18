@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: BlocProvider(
-        create: (_) => ImagesCubit()..fetchImages(),
+        create: (_) => ImagesCubit()..fetchImages('priime'),
         child: const ShowImagesPage(),
       ),
     );
